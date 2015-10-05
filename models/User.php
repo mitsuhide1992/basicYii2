@@ -4,24 +4,24 @@ namespace app\models;
 
 class User extends \yii\base\Object implements \yii\web\IdentityInterface
 {
-    public $id;
     public $username;
     public $password;
+    public $emailAddress;
     public $authKey;
     public $accessToken;
     
     private static $users = [
         '100' => [
-            'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
+            'username' => 'root',
+            'password' => 'root',
+            'emailAddress' => 'zhangliyuan1992@126.com',
             'authKey' => 'test100key',
             'accessToken' => '100-token',
         ],
         '101' => [
-            'id' => '101',
-            'username' => 'demo',
-            'password' => 'demo',
+            'username' => 'guest',
+            'password' => 'guest',
+            'emailAddress' => 'webjoin_500@126.com',
             'authKey' => 'test101key',
             'accessToken' => '101-token',
         ],

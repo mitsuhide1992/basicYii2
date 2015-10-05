@@ -62,6 +62,8 @@ class UserinfoController extends Controller
     {
         $model = new Userinfo();
 
+        // $model->load(Yii::$app->request->post());
+        // return;
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->emailAddress]);
         } else {

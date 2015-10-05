@@ -141,6 +141,7 @@ class Controller extends \yii\base\Controller
      * for details about HTTP status code
      * @return Response the current response object
      */
+    
     public function redirect($url, $statusCode = 302)
     {
         return Yii::$app->getResponse()->redirect(Url::to($url), $statusCode);
@@ -183,6 +184,7 @@ class Controller extends \yii\base\Controller
      */
     public function goBack($defaultUrl = null)
     {
+        var_dump(Yii::$app->getUser());
         return Yii::$app->getResponse()->redirect(Yii::$app->getUser()->getReturnUrl($defaultUrl));
     }
 

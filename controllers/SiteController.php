@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
+use app\models\Userinfo;
 use app\models\ContactForm;
 use app\models\EntryForm;
 
@@ -60,9 +61,12 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
+        // $model = new Userinfo();
+
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
+
         return $this->render('login', [
             'model' => $model,
         ]);
@@ -97,7 +101,7 @@ class SiteController extends Controller
         return $this->render('say', ['message' => $message]);
     }
 
-    public function actionEntry()
+    public function actionEntry ()
     {
         $model = new EntryForm;
 
